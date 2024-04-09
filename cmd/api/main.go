@@ -25,7 +25,7 @@ func main() {
 
   fmt.Printf("Starting GO API service to listen on port %d...", PORT)
   
-  var serverUrl = fmt.Sprintf("localhost:%d", PORT) // use Sprintf to return a string and not print to stdout
+  var serverUrl = fmt.Sprintf("0.0.0.0:%d", PORT) // use Sprintf to return a string and not print to stdout
 
   // start the server - pass in the base location and router
   err := http.ListenAndServe(serverUrl, r) // note this is a blocking call

@@ -10,6 +10,8 @@ func Handler(r *chi.Mux) {
 	// add middleware to a route with r.Use
 	r.Use(chimiddle.StripSlashes) // on all routes - removes ending slash in url to prevent a 404 error
 
+	r.Get("/health", GetHealth) // note these handler functions are in the same package handlers even though they are in different files (so they are available and in scope)
+
 	// define a route
 	r.Route("/account", func(router chi.Router) {
 		// auth middleware in the route
