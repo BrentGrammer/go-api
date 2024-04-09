@@ -21,10 +21,14 @@ func main() {
   // pass the router into the handler function
   handlers.Handler(r)
 
-  fmt.Println("Starting GO API service...")
+  const PORT = 8000
+
+  fmt.Printf("Starting GO API service to listen on port %d...", PORT)
+  
+  var serverUrl = fmt.Sprintf("localhost:%d", PORT) // use Sprintf to return a string and not print to stdout
 
   // start the server - pass in the base location and router
-  err := http.ListenAndServe("localhost:8000", r)
+  err := http.ListenAndServe(serverUrl, r) // note this is a blocking call
   if err != nil {
     log.Error(err)
   }

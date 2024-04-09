@@ -13,7 +13,7 @@ RUN go mod tidy
 
 EXPOSE 8000
 
-CMD ["go","run","main.go"]
+CMD ["go","run","cmd/api/main.go"]
 
 # create a file bin which is the executable. will run inside the /app workdir
 # RUN go build -o bin .

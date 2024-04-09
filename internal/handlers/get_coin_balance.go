@@ -1,3 +1,5 @@
+package handlers
+
 import (
 	"encoding/json"
 	"net/http"
@@ -14,9 +16,9 @@ func GetCoinBalance(w http.ResponseWriter, r *http.Request) {
     
 	// use gorilla package to decode
 	var decoder *schema.Decoder = schema.NewDecoder() 
-	var error error
+	var err error
     // this grabs and decodes the parameters(username) from the url and set it to the values in the params struct
-	err = decoder.Decoder(&params,  r.URL.Query())
+	err = decoder.Decode(&params,  r.URL.Query())
 
 	if err != nil {
 		log.Error(err)
@@ -42,7 +44,7 @@ func GetCoinBalance(w http.ResponseWriter, r *http.Request) {
 
 	var response = api.CoinBalanceResponse{
 		Balance: (*tokenDetails).Coins, // details from getusercoins is a pointer so we dereference to get the value
-		Code: http.StatusOK
+		Code: http.StatusOK,
 	}
 
 	// write response to response writer
