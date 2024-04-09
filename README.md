@@ -7,7 +7,6 @@
 
 - Build the image with: `docker build -t goapi:latest .`
 - Run the docker container with: `docker run -p 8000:8000 goapi:latest`
-- Access API on exposed port 8000
 
 ### Docker compose
 
