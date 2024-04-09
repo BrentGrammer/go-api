@@ -2,8 +2,8 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/BrentGrammer/go-api/api" // bring in entities types
-	"github.com/BrentGrammer/go-api/internal/tools"
+	"github.com/BrentGrammer/goapi/api" // bring in entities types
+	"github.com/BrentGrammer/goapi/internal/tools"
 	log "github.com/sirupsen/logrus"
 	"github.com/gorilla/schema" // gorilla used to decode params
 )

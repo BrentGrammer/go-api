@@ -5,9 +5,13 @@ WORKDIR /app
 RUN go mod init github.com/BrentGrammer/goapi
 
 # COPY go.mod .
-COPY main.go .
+# COPY main.go .
+
+COPY . .
 
 RUN go mod tidy
+
+EXPOSE 8000
 
 CMD ["go","run","main.go"]
 
