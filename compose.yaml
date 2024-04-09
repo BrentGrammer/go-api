@@ -1,0 +1,9 @@
+name: goapi
+
+services:
+  api:
+    build:
+      context: .
+    container_name: examplegoapi # note this is for convenience - cannot scale with a custom name (ignored in docker swarm for example)
+    ports:
+      - 8000:8000 # {host-machine}:{container}
