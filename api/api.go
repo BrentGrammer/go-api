@@ -5,7 +5,7 @@ import (
 	"net/http"
 )
 
-//  struct to define parameters endpoint will take
+//  struct to define parameters in the URL for the endpoint
 type CoinBalanceParams struct {
 	Username string
 }

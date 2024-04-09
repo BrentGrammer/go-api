@@ -22,4 +22,16 @@ type DatabaseInterface interface {
 	SetupDatabase() error
 }
 
-// 1:05:36
+// func returns the db interface
+func NewDatabase() (*DatabaseInterface, error) {
+	var database DatabaseInterface = &mockDB{} // note we set the mem addr to the variable (we're returning a pointer to the db interface)
+    // the struct mockDB implements the db interface
+
+	var err error = database.SetupDatabase()
+	if err != nil {
+		log.Error(err)
+		return nil, err // keep return sig in tact and return nil for db interface,
+	}
+
+	return &database, nil
+}
