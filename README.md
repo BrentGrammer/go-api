@@ -19,6 +19,6 @@
 ## Using the API
 
 - Requests can be sent to `http://localhost:8000`
-  - `/health`
-  - `/account/coins?username=alex)`
+  - GET `/health`
+  - GET `/account/coins?username=alex)`
     - Set `Authorization` header to "123ABC"
