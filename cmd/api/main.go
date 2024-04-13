@@ -26,6 +26,7 @@ func main() {
   fmt.Printf("Starting GO API service to listen on port %d...", PORT)
   
   // NOTE: you need to use 0.0.0.0 to specify accepting incoming requests inside the docker container and not "localhost"
+  // You could also just use ":8000" without specifying localhost or 0.0.0.0
   var serverUrl = fmt.Sprintf("0.0.0.0:%d", PORT) // use Sprintf to return a string and not print to stdout
 
   // start the server - pass in the base location and router
